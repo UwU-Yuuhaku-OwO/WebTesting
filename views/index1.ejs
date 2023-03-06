@@ -195,32 +195,33 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="FullName" class="form-label">Full Name</label>
-                                <input type="FullName" class="form-control" id="FullName" name="FullName" value=""  placeholder="FullName">
+                                <label for="Product" class="form-label">Product Name</label>
+                                <input type="Product" class="form-control" id="Product" name="Product" value=""  placeholder="Product">
                                 <div id="emailHelp" class="form-text">
                                 </div>
                             </div>
                             <div class="mb-3"> 
-                                <label for="Email" class="form-label">Email</label>
-                                <input type="Email" class="form-control" id="Email" name="Email" value="" placeholder="Email">
+                                <label for="Prices" class="form-label">Prices</label>
+                                <input type="Prices" class="form-control" id="Prices" name="Prices" value="" placeholder="Prices">
                             </div>
 
-                            <label for="Gender" class="form-label">Gender</label>
+                            <label for="Types" class="form-label">Types</label>
                            
                             
                             <div class="form-floating mb-3">
-                                    <select name="Gender" class="form-select" id="floatingSelect"
+                                    <select name="Types" class="form-select" id="floatingSelect"
                                         aria-label="Floating label select example">
-                                            <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
+                                            <option value="Figure">Figure</option>
+                                            <option value="Keycap">Keycap</option>
+                                            <option value="Lego">Lego</option>
                                     </select>
-                                <label for="floatingSelect">Select your Gender</label>
+                                <label for="floatingSelect">Type of Toys</label>
                             </div>
 
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="Phone" class="form-label">Phone Number</label>
                                 <input type="Phone" class="form-control" id="Phone" name="Phone" value="" placeholder="Phone">
-                            </div>
+                            </div> -->
 
                         
 
@@ -245,25 +246,23 @@
                             <thead>
                                 <tr class="">
                                     <th scope="col">ID</th>
-                                    <th scope="col">FullName</th>
-                                    <th scope="col">Gender</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Phone Number</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Prices</th>
+                                    <th scope="col">Types</th>
+                                    <!-- <th scope="col">Action</th> -->
                                 </tr>
                             </thead>
                             <tbody class="quotes">
                                 <% for(var i = 0; i < quotes.length; i++) {%>
                                     <tr class="quotes">
                                         <td><%= quotes[i].id %></td>:
-                                        <td><%= quotes[i].FullName %></td>:
-                                        <td><%= quotes[i].Gender %></td>:
-                                        <td><%= quotes[i].Email %></td>:
-                                        <td><%= quotes[i].Phone %></td>:
-                                        <td>
+                                        <td><%= quotes[i].Product %></td>:
+                                        <td>$ <%= quotes[i].Prices %></td>:
+                                        <td><%= quotes[i].Types %></td>:
+                                        <!-- <td>
                                             <input type="hidden" name="ID" value="<%= quotes[i].id %>">
                                             <button class="btn btn-sm btn-primary" id="delete-button">Delete</button>
-                                        </td>
+                                        </td> -->
                                     </tr>
                                 <% } %>
                             </tbody>
