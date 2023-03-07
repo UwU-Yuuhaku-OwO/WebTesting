@@ -6,6 +6,7 @@ const bodyParser= require('body-parser')
 const app = express();
 
 const MongoClient = require('mongodb').MongoClient
+const ObjectId = require('mongodb').ObjectId
 
 const connectionString = 'mongodb+srv://WhoTill:who123@cluster0.hjfsdes.mongodb.net/test'
 
@@ -89,12 +90,12 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
           
 
 
-          app.delete('/delete', (req, res) => {
+          app.get('/delete/:id', (req, res) => {
             quotesCollection.deleteOne(
-                { id: req.body.id }
+                { _id: new ObjectId(req.params.id) }
             )
             .then(result => {
-                res.json(`Deleted`)
+                res.redirect('/')
             })
             .catch(error => console.error(error))
         })

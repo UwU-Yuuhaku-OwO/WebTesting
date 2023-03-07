@@ -249,7 +249,7 @@
                                     <th scope="col">Product Name</th>
                                     <th scope="col">Prices</th>
                                     <th scope="col">Types</th>
-                                    <!-- <th scope="col">Action</th> -->
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody class="quotes">
@@ -259,10 +259,9 @@
                                         <td><%= quotes[i].Product %></td>:
                                         <td>$ <%= quotes[i].Prices %></td>:
                                         <td><%= quotes[i].Types %></td>:
-                                        <!-- <td>
-                                            <input type="hidden" name="ID" value="<%= quotes[i].id %>">
-                                            <button class="btn btn-sm btn-primary" id="delete-button">Delete</button>
-                                        </td> -->
+                                        <td>
+                                            <a href="delete/<%= quotes[i]._id  %>" class="btn btn-sm btn-primary">Delete</a>
+                                        </td>
                                     </tr>
                                 <% } %>
                             </tbody>
